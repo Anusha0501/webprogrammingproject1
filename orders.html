@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% for i in data %} 
+<div class="items">
+
+<img src={{i[0]}} alt="img" class="img_item">
+<div class="text">
+<div class="heading">{{i[1]}}</div>
+<div> {{i[2]}} </div>
+</div>
+
+</div>
+{% endfor %}
+{% endblock %}

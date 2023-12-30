@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ebayz - Sign In</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+		display:flex;
+		flex-direction:column;
+            margin: 150px auto;
+            width: 300px;
+            background-color: pink;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo { 
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px auto;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .btn-login {
+            background-color: yellow;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .new-to-ebayz {
+            background-color: pink;
+            color: black;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .create-account-button {
+            background-color: yellow;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="{{url_for('static',filename="images/ebays.jpg")}}" alt="Ebayz Logo" width="100">
+        </div>
+        <h1>Sign In</h1>
+	
+        <form id="loginForm" action="{{url_for('home')}}">
+            <input type="text" name="email" placeholder="Email Address" required>
+            <input type="password" name "password" placeholder="Password" required>
+<button type="Submit" class="btn-login" id="signInButton">
+Sign In
+</button>
+        </form>
+        <div class="new-to-ebayz">New to Ebayz?</div>
+        <button class="create-account-button"><a href="{{url_for('create_account')}}">Create a New Account</button>
+    </div>
+    <!-- we connect our main amazon page with the login page here with the use of scipt-->
+</body>
+</html>

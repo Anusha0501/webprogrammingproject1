@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping Cart</title>
+  <style>
+    body {
+      background-color: pink;
+      font-family: Arial, sans-serif;
+    }
+
+    .cart-container {
+      width: 80%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .product-details {
+      display: flex;
+      align-items: center;
+    }
+
+    .product-image {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+    }
+
+    .product-name {
+      font-weight: bold;
+    }
+
+    .product-price {
+      color: green;
+    }
+
+    .total {
+      font-size: 1.2em;
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    .add-to-cart-button {
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .remove-from-cart-button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="cart-container">
+    <h1>Your Shopping Cart</h1>
+    <div class="cart-item">
+      <div class="product-details">
+        <img class="product-image" src="macbook.png" alt="Macbook air m1">
+        <span class="product-name">Macbook air m1</span>
+      </div>
+      <span class="product-price">69,000</span>
+      <button class="remove-from-cart-button" onclick="removeItem(this)">Remove</button>
+    </div>
+    <div class="cart-item">
+      <div class="product-details">
+        <img class="product-image" src="Screenshot 2023-11-06 231447.png" alt="Iphone 13">
+        <span class="product-name">Iphone 13</span>
+      </div>
+      <span class="product-price">50,000</span>
+      <button class="remove-from-cart-button" onclick="removeItem(this)">Remove</button>
+    </div>
+    <div class="cart-item">
+      <div class="product-details">
+        <img class="product-image" src="noise buds.png" alt="Noise Buds">
+        <span class="product-name">Noise Buds</span>
+      </div>
+      <span class="product-price">1,499</span>
+      <button class="remove-from-cart-button" onclick="removeItem(this)">Remove</button>
+    </div>
+    <div class="total">
+      Total: <span id="cart-total">0</span>
+    </div>
+    <input type="text" id="new-item" placeholder="Enter item name">
+    <input type="number" id="new-item-price" placeholder="Enter item price">
+    <button class="add-to-cart-button" onclick="addItem()">Add Item</button>
+  </div>
+
+  <script>
+    let total = 0;
+
+    function removeItem(button) {
+      const item = button.parentElement.querySelector(".product-name").textContent;
+      const price = parseInt(button.parentElement.querySelector(".product-price").textContent.replace(",", ""));
+      total -= price;
+      document.getElementById("cart-total").textContent = total.toLocaleString();
+      button.parentElement.remove();
+    }
+
+    function addItem() {
+      const itemName = document.getElementById("new-item").value;
+      const itemPrice = parseInt(document.getElementById("new-item-price").value);
+      if (itemName && itemPrice) {
+        total += itemPrice;
+        document.getElementById("cart-total").textContent = total.toLocaleString();
+        const cartItem = document.createElement("div");
+        cartItem.className = "cart-item";
+        cartItem.innerHTML = `
+          <div class="product-details">
+            <span class="product-name">${itemName}</span>
+          </div>
+          <span class="product-price">${itemPrice.toLocaleString()}</span>
+          <button class="remove-from-cart-button" onclick="removeItem(this)">Remove</button>
+        `;
+        document.querySelector(".cart-container").insertBefore(cartItem, document.querySelector(".total"));
+        document.getElementById("new-item").value = "";
+        document.getElementById("new-item-price").value = "";
+      }
+    }
+  </script>
+</body>
+</html>

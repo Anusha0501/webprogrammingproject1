@@ -1,0 +1,52 @@
+{% extends 'layout.html' %} 
+{% block content %} 
+    <center>
+        <h1>Your Orders</h1>
+        <p>Here are your orders:</p>
+        
+        <div class="order">
+            <img src="https://i5.walmartimages.com/asr/23cbc7c9-2352-4416-ac19-c2acc26ee421.b5edff022bf166870158cb17333feeff.jpeg" alt="Chocolate Order" width="200" height="150">
+            <div>
+               <b>
+                    <p>Order ID: 123456</p>
+                    <p>Order Date: 5 november 2023</p>
+                    <p>Product: Chocolate Bar</p>
+                    <p>Quantity: 2</p>
+                    <p>Total Price: inr 10.00</p>
+                    <p>Delivery by 10 december 2023</p>
+                    <p>Mode of payment: Net Banking</p>
+                </b>
+            </div>
+        </div>
+
+        <div class="order">
+            <img src="https://www.liveenhanced.com/wp-content/uploads/2018/12/Different-Types-of-Chocolate.jpg" alt="Assorted Chocolates Order" width="200" height="150">
+            <div>
+                <b>
+                    <p>Order ID: 789012</p>
+                    <p>Order Date: 1 november 2023</p>
+                    <p>Product: Assorted Chocolates</p>
+                    <p>Quantity: 1</p>
+                    <p>Total Price: inr 15.00</p>
+                    <p>Delivery by 5 december 2023</p>
+                    <p>Mode of payment: Cash</p>
+                </b>
+            </div>    
+        </div>
+
+        <h2>Return</h2>
+        <p>Returned Items.</p>
+        <div class="order">
+            <img src="https://www.fnp.com/images/pr/l/v20210226154901/white-pothos-plant-in-white-hearts-red-metal-pot_1.jpg" alt="Plant" width="200" height="150">
+            <div>
+                <b>
+                    <p>Order ID: 123456</p>
+                    <p>Product: Chocolate Bar</p>
+                    <p>Total Price: inr 100.00</p>
+                    <p>Return date: 22 november 2023</p>
+                    <p>Refund in process and will be credited by 4 december 2023</p>
+                </b>
+            </div>
+        </div>
+    </center>
+{% endblock %}

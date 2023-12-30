@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebayz.com - Spend Less & Smile More</title>
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/000/587/678/original/vector-initial-e-letter-logo-with-swoosh-colored-red-and-black.jpg">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='orders.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='order.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='electric.css')}}">
+
+
+    <script defer src="script.js"></script>
+    <script src="https://kit.fontawesome.com/14a1ea0e90.js" crossorigin="anonymous"></script>
+    <style>
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .box2-left {
+            margin-right: 10px;
+        }
+        .box2-right {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="nav-box1 box"></div>
+            <div class="nav-box2 box">
+                <div class="box2-left">
+                    <i class="fa-solid fa-location-dot fa-xl" style="color: #ffffff;"></i>
+                </div>
+                <div class="box2-right">
+                    <p class="first-box2">Deliver to</p>
+                    <p class="second-box2">India</p>
+                </div>
+            </div>
+            <div class="nav-box3">
+                <select name="" id="" class="nav-select">
+                    <option value="">All</option>
+                </select>
+                <input type="search" placeholder="search ebayz" class="nav-input">
+                <div class="box3-icon">
+                    <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #00040a;"></i>
+                </div>
+                <!-- Search button added here -->
+                <button type="button" class="search-button" onclick="performSearch()">Search</button>
+            </div>
+            <div class="nav-box4">
+                <img src="{{url_for('static',filename='images/flag.jpeg')}}" alt="">
+                <select name="" id="" class="box4-select">
+                    <option value="">EN</option>
+                </select>
+            </div>
+
+            <div class="nav-box5 box">
+                <p class="box-first">Hello,sign in</p>
+                <p class="box-second">Accounts & Lists</p>
+            </div>
+            <div class="nav-box6 box">
+                <p class="box-first">Return</p>
+                <p class="box-second">& Orders</p>
+            </div>
+            <div class="nav-box7"> <!--cart banane ke liye-->
+                <i class="fa-solid fa-cart-shopping fa-xl" style="color: #fcfcfc;"></i>
+                <p>Cart</p>
+            </div>
+        </nav>
+
+{% block content %}{% endblock %}
+
+<footer>
+          <div class="top">
+            <a href="#Navigation">Back to Top</a>
+          </div>
+          <div class="customer-footer">
+            <div class="cust1">
+              <p class="cust-first">Get to Know Us</p>
+              <p class="cust-Second">Career</p>
+              <p class="cust-Second">Blog</p>
+              <p class="cust-Second">About Ebayz</p>
+              <p class="cust-Second">Investor Relations</p>
+
+              
+            </div>
+            <div class="cust1">
+              <p class="cust-first">Get to Know Us</p>
+              <p class="cust-Second">Career</p>
+              <p class="cust-Second">Blog</p>
+              <p class="cust-Second">About Ebayz</p>
+              <p class="cust-Second">Investor Relations</p>
+              
+              
+            </div>
+            <div class="cust1">
+              <p class="cust-first">Get to Know Us</p>
+              <p class="cust-Second">Career</p>
+              <p class="cust-Second">Blog</p>
+              <p class="cust-Second">About Ebayz</p>
+              <p class="cust-Second">Investor Relations</p>
+              
+              
+            </div>
+            <div class="cust1">
+              <p class="cust-first">Get to Know Us</p>
+              <p class="cust-Second">Career</p>
+              <p class="cust-Second">Blog</p>
+              <p class="cust-Second">About Ebayz</p>
+              <p class="cust-Second">Investor Relations</p>
+              
+              
+            </div>
+          </div>
+        </footer>
+
+        <script>
+            function performSearch() {
+                // Add your search logic here
+                alert("Search button clicked!");
+            }
+        </script>
+    </body>
+    </html>

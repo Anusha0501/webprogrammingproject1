@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebayz.com - Spend Less & Smile More</title>
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/000/587/678/original/vector-initial-e-letter-logo-with-swoosh-colored-red-and-black.jpg">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="styles.css"> <!-- Include the new styles.css file for the slider -->
+    <script defer src="script.js"></script>
+    <script src="https://kit.fontawesome.com/14a1ea0e90.js" crossorigin="anonymous"></script>
+    <style>
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .box2-left {
+            margin-right: 10px;
+        }
+        .box2-right {
+            text-align: right;
+        }
+
+        /* Add the new styles for the slider */
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .slide {
+            width: 20px;
+            height: 5px;
+            background-color: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .active-slide {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="nav-box1 box">
+ <img src ="{{url_for('static',filename='images/EBASE.jpg')}}"style="height: 50px; width: 150px;">
+                </div>
+                
+
+		
+            <div class="nav-box2 box">
+                <div class="box2-left">
+                    <i class="fa-solid fa-location-dot fa-xl" style="color: #ffffff;"></i>
+                </div>
+		
+                <div class="box2-right">
+                    <p class="first-box2">Deliver to</p>
+                    <p class="second-box2">India</p>
+                </div>
+            </div>
+            <div class="nav-box3">
+                <select name="" id="" class="nav-select">
+                    <option value="">All</option>
+                </select>
+                <form action="{{url_for('orders')}}" method="POST" class="searchform">
+
+                    <input type="search" placeholder="search ebayz" name="search" class="nav-input">
+                    <div class="box3-icon">
+                        <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #00040a;"></i>
+                    </div>
+                    <!-- Search button added here -->
+                    <button type="Submit" class="search-button" >Search</button>
+                </form>
+            </div>
+            <div class="nav-box4">
+                <img src="{{url_for('static',filename='images/flag.jpeg')}}" alt="">
+                <select name="" id="" class="box4-select">
+                    <option value="">EN</option>
+                </select>
+            </div>
+
+            <div class="nav-box5 box">
+            <a href="{{url_for('login')}}">
+                <p class="box-first">Hello, sign in</p>
+                <p class="box-second">Accounts & Lists</p></a>
+            </div>
+            <div class="nav-box6 box">
+                <a href="{{url_for('return_orders')}}">
+                <p class="box-first">Return</p>
+                <p class="box-second">& Orders</p></a>
+            </div>
+            <div class="nav-box7">
+              <a href="{{url_for('cart')}}">
+
+                <i class="fa-solid fa-cart-shopping fa-xl" style="color: #fcfcfc;"></i>
+                <p>Cart</p></a>
+            </div>
+        </nav>
+
+        <div class="panel">
+            <div class="panel-left box">
+              <i class="fa-solid fa-bars fa-xl" style="color: #ffffff;"></i>
+              <p>All</p>
+            </div>
+            <div class="panel-middle">
+              <p class="box">Shopping made easy</p>
+              <p class="box">Customer Service</p>
+            </div>
+            <div class="panel-right box">
+              <p>Download the App</p>
+            </div>
+          </div>
+        </header>
+        
+
+
+
+        
+        
+
+        
+
+
+
+
+
+        
+          <div class="shopping">
+    {% for i in product_data %}
+            <div class="shop-box">
+              <div class="box-content">
+                <h1>{{i[1]}}</h1>
+                <img src={{i[2]}} alt="">
+                <a href="">See More</a>
+              </div>
+            </div>
+    {% endfor %}
+          </div>
+          
+        </main>
+        <footer>
+          <div class="top">
+            <a href="#Navigation">Back to Top</a>
+          </div>
+          <div class="customer-footer">
+            <div class="cust1">
+              <p class="cust-first">Get to Know Us</p>
+              <p class="cust-Second">Career</p>
+              <p class="cust-Second">Blog</p>
+              <p class="cust-Second">About Ebayz</p>
+              <p class="cust-Second">Investor Relations</p>
+            </div>
+            <div class="cust1">
+              <p class="cust-first">Get to Know Us</p>
+              <p class="cust-Second">Career</p>
+              <p class="cust-Second">Blog</p>
+              <p class="cust-Second">About Ebayz</p>
+              <p class="cust-Second">Investor Relations</p>
+            </div>
+            <div class="cust1">
+              <p class="cust-first">Get to Know Us</p>
+              <p class="cust-Second">Career</p>
+              <p class="cust-Second">Blog</p>
+              <p class="cust-Second">About Ebayz</p>
+              <p class="cust-Second">Investor Relations</p>
+            </div>
+            <div class="cust1">
+              <p class="cust-first">Get to Know Us</p>
+              <p class="cust-Second">Career</p>
+              <p class="cust-Second">Blog</p>
+              <p class="cust-Second">About Ebayz</p>
+              <p class="cust-Second">Investor Relations</p>
+            </div>
+          </div>
+        </footer>
+    </body>
+</html>
